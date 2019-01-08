@@ -14,9 +14,12 @@ class App extends Component {
             <div>
                 <BrowserRouter>
                     <div>
-                        <Route exact path="/" component={HomePage}/>
-                        <Route exact path="/category" component={CategorySelectionPage}/>
-                        <Route exact path="/entry" component={NewEntryPage}/>
+                        <Route path="/" component={HomePage}/>
+                        <Route path="/test" component={HomePage}/>
+                        <Route path="/category" component={HomePage}/>
+                        <Route path="/category/test" component={HomePage}/>
+                        {/* <Route path="/category" component={CategorySelectionPage}/>
+                        <Route path="/category/test/:id" component={NewEntryPage}/> */}
 
 
                     </div>
