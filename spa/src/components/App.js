@@ -12,8 +12,16 @@ class App extends Component {
 
         return(
             <div>
+                <BrowserRouter>
+                    <div>
+                        <Route exact path="/" component={HomePage}/>
+                        <Route exact path="/category" component={CategorySelectionPage}/>
+                        <Route exact path="/entry" component={NewEntryPage}/>
+
+
+                    </div>
+                </BrowserRouter>
                 
-                {this.getPage()}
             </div>
         )
     }
