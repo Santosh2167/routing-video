@@ -5,23 +5,32 @@ import HomePage from "./pages/HomePage";
 import NewEntryPage from "./pages/NewEntryPage";
 
 class App extends Component {
-    state = {location: "home"}
+    state = {
+        categories: ["food","thoughts","romance"]
+    }
 
     render() {
-        const {location} = this.state;
+
+        
+        const {categories} = this.state;
 
         return(
             <div>
                 <BrowserRouter>
                     <div>
-                        <Link to="/">Home</Link><br/>
-                         <Link to="/category">Category</Link><br/>
-                         <Link to="/entry">Entry</Link><br/>
-                        <Route path="/" component={HomePage}/>
-                        <Route path="/test" component={HomePage}/>
+                        <Route exact path="/" component={HomePage}/>
+                        <Route 
+                            exact path="/category" 
+                            render={(props)=>{ return <CategorySelectionPage {...props} categories={categories}/>}}
+
+                            
+                            
+                            
+                        />
+                        {/* <Route path="/test" component={HomePage}/>
                         <Route path="/category" component={HomePage}/>
                         <Route path="/category/test/:id" component={HomePage}/>
-                        {/* <Route path="/category" component={CategorySelectionPage}/>
+                        {/* <Route path="/category" component={CategorySelectionPage}/> 
                         <Route path="/category/test/:id" component={NewEntryPage}/> */}
 
 
