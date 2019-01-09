@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {Redirect,Link} from "react-router-dom";
+import EntryForm from "./../forms/EntryForm";
 
 class NewEntryPage extends Component {
 
@@ -31,6 +32,7 @@ class NewEntryPage extends Component {
 
     render() {
         const {category,errorMessage} = this.state;
+        const {onEntryFormSubmit} = this.props; // this is imp. learn how to pass a function 
         if(errorMessage) {
             return <Redirect to="/category"/>
         }
@@ -40,6 +42,7 @@ class NewEntryPage extends Component {
                 <div>
                     <Link to="/category"><button>Back to Category</button></Link>
                     <h1>New {category} Page</h1>
+                    <EntryForm />
                 </div>}
                 {errorMessage} 
             </div>

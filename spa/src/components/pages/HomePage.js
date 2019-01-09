@@ -10,7 +10,7 @@ render(){
     return(
 
         <div>
-            <h1>Page: HomePage</h1>
+            <h1>HomePage</h1>
             <Link to="/category">
                 <button>New Entry</button>
             </Link>

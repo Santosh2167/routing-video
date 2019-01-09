@@ -19,7 +19,6 @@ class CategorySelectionPage extends Component {
                     {categories.map((item,index) =>{
                         return(
                             <li key={item}>
-                            {console.log(index)}
                                 <Link to={`/entry/new/${index}`}>{item}</Link> {/* 40.34 minutes what happens if you dont put curly bracket? all turns red and why? */}
                             </li>
                         ) 

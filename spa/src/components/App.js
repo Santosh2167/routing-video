@@ -6,7 +6,14 @@ import NewEntryPage from "./pages/NewEntryPage";
 
 class App extends Component {
     state = {
-        categories: ["food","thoughts","romance"]
+        categories: ["food","thoughts","romance"],
+        entries: []
+    }
+
+    onEntryFormSubmit =(entry) => {
+        this.setState((state)=>{
+            return {entries: [...state.entries, entry]};
+        })
     }
 
     render() {
@@ -34,7 +41,7 @@ class App extends Component {
                             //    following render is kept in 42 minutes
 
                             render={(props)=>{ 
-                                return <NewEntryPage {...props} categories={categories}/>
+                                return <NewEntryPage {...props} categories={categories} onEntryFormSubmit={this.onEntryFormSubmit}/>
                             }}
                         
                         
