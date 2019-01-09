@@ -30,9 +30,9 @@ class App extends Component {
                         <Route 
                             exact
                             path="/entry/new/:index"
-                            component={NewEntryPage}
+                            //component={NewEntryPage}
 
-                        {/*following render is kept 42 minutes*/}
+                    //    following render is kept 42 minutes
 
                             render={(props)=>{ 
                                 return <NewEntryPage {...props} categories={categories}/>
