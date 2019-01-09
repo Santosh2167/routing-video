@@ -1,11 +1,28 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
 
 class CategorySelectionPage extends Component {
 
+    //we have received custome props and cateogry throuh the route from App page let us take custome
+    //category out of the props this is in 32 minutes (around) in the video
+
+    
+
     render() {
+        const {categories} = this.props;
+
         return(
             <div>
-                Page: CategorySelectionPage
+                <h1>CategorySelectionPage</h1>
+            <ul> {/*34.06 minutes in the video */}
+                    {categories.map(item,index) =>{
+                        return(
+                            <li key={item}>
+                                <Link to={'/entry/new'}>{item}</Link> {/* 40.34 minutes what happens if you dont put curly bracket? all turns red and why? */}
+                            </li>;
+                        ) 
+                    })}
+                </ul> 
             </div>
         )
     }

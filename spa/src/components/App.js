@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {BrowserRouter, Route,Link} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import CategorySelectionPage from "./pages/CategorySelectionPage";
 import HomePage from "./pages/HomePage";
 import NewEntryPage from "./pages/NewEntryPage";
@@ -10,6 +10,7 @@ class App extends Component {
     }
 
     render() {
+    
 
         
         const {categories} = this.state;
@@ -21,11 +22,24 @@ class App extends Component {
                         <Route exact path="/" component={HomePage}/>
                         <Route 
                             exact path="/category" 
-                            render={(props)=>{ return <CategorySelectionPage {...props} categories={categories}/>}}
+                            render={(props)=>{ 
+                                return <CategorySelectionPage {...props} categories={categories}/>
+                            }}
+                            
+                        />
+                        <Route 
+                            exact
+                            path="/entry/new/:index"
+                            component={NewEntryPage}
 
-                            
-                            
-                            
+                        {/*following render is kept 42 minutes*/}
+
+                            render={(props)=>{ 
+                                return <NewEntryPage {...props} categories={categories}/>
+                            }}
+                        
+                        
+                        
                         />
                         {/* <Route path="/test" component={HomePage}/>
                         <Route path="/category" component={HomePage}/>
