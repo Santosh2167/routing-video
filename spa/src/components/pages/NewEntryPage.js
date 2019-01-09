@@ -42,7 +42,7 @@ class NewEntryPage extends Component {
                 <div>
                     <Link to="/category"><button>Back to Category</button></Link>
                     <h1>New {category} Page</h1>
-                    <EntryForm />
+                    <EntryForm onEntryFormSubmit={onEntryFormSubmit} category={category}/>
                 </div>}
                 {errorMessage} 
             </div>
